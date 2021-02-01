@@ -7,6 +7,7 @@ import (
 
 func echo(w http.ResponseWriter, req *http.Request) {
 
+	fmt.Printf("incoming URL: %#v\n ", req.URL)
 	k, _ := req.URL.Query()["k"]
 	fmt.Fprintf(w, fmt.Sprintf("%s\n", k[0]))
 }
